@@ -40,6 +40,9 @@ public class ProfileEntity implements UserDetails {
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
 
+    @Column
+    private boolean visible;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
